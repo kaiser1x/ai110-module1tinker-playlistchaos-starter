@@ -71,6 +71,7 @@ def classify_song(song: Song, profile: Dict[str, object]) -> str:
     chill_keywords = ["lofi", "ambient", "sleep"]
 
     is_hype_keyword = any(k in genre for k in hype_keywords)
+    # Per spec: chill keywords are matched against the title, not the genre.
     is_chill_keyword = any(k in title for k in chill_keywords)
 
     # Matching the favorite genre only counts as Hype when the song isn't
